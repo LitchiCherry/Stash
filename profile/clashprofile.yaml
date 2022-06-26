@@ -14,11 +14,11 @@ dns:
     fallback: ['tls://1.0.0.1:853', 'https://cloudflare-dns.com/dns-query', 'https://dns.google/dns-query']
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxy-providers:
-  jms:
+  Airport1:
     type: http
     url: "xxxx"
     interval: 8640
-    path: ./jms.yaml
+    path: ./Airport1.yaml
     health-check:
       enable: true
       interval: 600
@@ -30,7 +30,7 @@ proxy-groups:
   - name: 🔰 节点代理
     type: select
     use:
-      - jms
+      - Airport1
     proxies:
       - ♻️ 自动节点代理
   - name: ♻️ 自动节点代理
@@ -38,36 +38,36 @@ proxy-groups:
     url: http://www.qualcomm.cn/generate_204
     interval: 120
     use:
-      - jms
+      - Airport1
   - name: 🎥 Netflix
     type: select
     use:
-      - jms
+      - Airport1
   - name: 🎥 Youtube
     type: select
     use:
-      - jms
+      - Airport1
     proxies:
       - 🔰 节点代理
       - ♻️ 自动节点代理
   - name: Ⓜ️ 微软服务
     type: select
     use:
-      - jms
+      - Airport1
     proxies:
       - DIRECT
       - 🔰 节点代理
   - name: 📲 电报
     type: select
     use:
-      - jms
+      - Airport1
     proxies:
       - 🔰 节点代理
       - ♻️ 自动节点代理
   - name: ✈ 机场
     type: select
     use:
-      - jms
+      - Airport1
     proxies:
       - 🔰 节点代理
       - ♻️ 自动节点代理
@@ -147,50 +147,55 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 
+  airport:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/airport.txt"
+    path: ./ruleset/airport.yaml
+    interval: 86400
+
+  directaddtion:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/directaddtion.txt"
+    path: ./ruleset/directaddtion.yaml
+    interval: 86400
+
+  microsoft:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/microsoft.txt"
+    path: ./ruleset/microsoft.yaml
+    interval: 86400
+
+ netflix:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/netflix.txt"
+    path: ./ruleset/netflix.yaml
+    interval: 86400
+
+ proxyaddition:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/proxyaddition.txt"
+    path: ./ruleset/proxyaddition.yaml
+    interval: 86400
+
+ youtube:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/youtube.txt"
+    path: ./ruleset/youtube.yaml
+    interval: 86400
+
 rules:
- - DOMAIN,clash.razord.top,DIRECT
- - DOMAIN,yacd.haishan.me,DIRECT
- - DOMAIN-SUFFIX,live.com,Ⓜ️ 微软服务
- - DOMAIN-SUFFIX,live.net,Ⓜ️ 微软服务
- - DOMAIN-SUFFIX,fast.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflix.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflix.net,🎥 Netflix
- - DOMAIN-SUFFIX,nflxext.com,🎥 Netflix
- - DOMAIN-SUFFIX,nflximg.com,🎥 Netflix
- - DOMAIN-SUFFIX,nflximg.net,🎥 Netflix
- - DOMAIN-SUFFIX,nflxso.net,🎥 Netflix
- - DOMAIN-SUFFIX,nflxvideo.net,🎥 Netflix
- - DOMAIN-SUFFIX,Netflixdnstest0.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflixdnstest1.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflixdnstest2.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflixdnstest3.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflixdnstest4.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflixdnstest5.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflixdnstest6.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflixdnstest7.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflixdnstest8.com,🎥 Netflix
- - DOMAIN-SUFFIX,Netflixdnstest9.com,🎥 Netflix
- - DOMAIN-KEYWORD,dualstack.apiproxy-,🎥 Netflix
- - DOMAIN-KEYWORD,dualstack.ichnaea-web-,🎥 Netflix
- - IP-CIDR,23.246.0.0/18,🎥 Netflix,no-resolve
- - IP-CIDR,37.77.184.0/21,🎥 Netflix,no-resolve
- - IP-CIDR,45.57.0.0/17,🎥 Netflix,no-resolve
- - IP-CIDR,64.120.128.0/17,🎥 Netflix,no-resolve
- - IP-CIDR,66.197.128.0/17,🎥 Netflix,no-resolve
- - IP-CIDR,108.175.32.0/20,🎥 Netflix,no-resolve
- - IP-CIDR,192.173.64.0/18,🎥 Netflix,no-resolve
- - IP-CIDR,198.38.96.0/19,🎥 Netflix,no-resolve
- - IP-CIDR,198.45.48.0/20,🎥 Netflix,no-resolve
- - IP-CIDR,34.210.42.111/32,🎥 Netflix,no-resolve
- - IP-CIDR,52.89.124.203/32,🎥 Netflix,no-resolve
- - IP-CIDR,54.148.37.5/32,🎥 Netflix,no-resolve
- - DOMAIN-SUFFIX,googlevideo.com,🎥 Youtube
- - DOMAIN-SUFFIX,youtube.com,🎥 Youtube
- - DOMAIN-SUFFIX,ytimg.com,🎥 Youtube
- - DOMAIN,youtubei.googleapis.com,🎥 Youtube
- - DOMAIN,yt3.ggpht.com,🎥 Youtube
- - DOMAIN-SUFFIX,infiniport.xyz, ✈ 机场
- - DOMAIN-SUFFIX,xmrth.com, ✈ 机场
+ - RULE-SET,directaddtion,DIRECT
+ - RULE-SET,proxyaddtion,🔰 节点代理
+ - RULE-SET,microsoft,Ⓜ️ 微软服务
+ - RULE-SET,netflix,🎥 Netflix
+ - RULE-SET,youtube,🎥 Youtube
+ - RULE-SET,airport,✈ 机场
  - RULE-SET,applications,DIRECT
  - RULE-SET,private,DIRECT
  - RULE-SET,reject,🛑 拦截
