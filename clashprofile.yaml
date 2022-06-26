@@ -1,0 +1,206 @@
+mixed-port: 10808
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: '127.0.0.1:9090'
+dns:
+    enable: true
+    ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29]
+    enhanced-mode: redir-host
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+    fallback: ['tls://1.0.0.1:853', 'https://cloudflare-dns.com/dns-query', 'https://dns.google/dns-query']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+proxy-providers:
+  jms:
+    type: http
+    url: "xxxx"
+    interval: 8640
+    path: ./jms.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.qualcomm.cn/generate_204
+
+proxies:
+ 
+proxy-groups:
+  - name: 🔰 节点代理
+    type: select
+    use:
+      - jms
+    proxies:
+      - ♻️ 自动节点代理
+  - name: ♻️ 自动节点代理
+    type: url-test
+    url: http://www.qualcomm.cn/generate_204
+    interval: 120
+    use:
+      - jms
+  - name: 🎥 Netflix
+    type: select
+    use:
+      - jms
+  - name: 🎥 Youtube
+    type: select
+    use:
+      - jms
+    proxies:
+      - 🔰 节点代理
+      - ♻️ 自动节点代理
+  - name: Ⓜ️ 微软服务
+    type: select
+    use:
+      - jms
+    proxies:
+      - DIRECT
+      - 🔰 节点代理
+  - name: 📲 电报
+    type: select
+    use:
+      - jms
+    proxies:
+      - 🔰 节点代理
+      - ♻️ 自动节点代理
+  - name: ✈ 机场
+    type: select
+    use:
+      - jms
+    proxies:
+      - 🔰 节点代理
+      - ♻️ 自动节点代理
+  - name: 🛑 拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+
+  apple:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+
+  private:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+
+  applications:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+
+rules:
+ - DOMAIN,clash.razord.top,DIRECT
+ - DOMAIN,yacd.haishan.me,DIRECT
+ - DOMAIN-SUFFIX,live.com,Ⓜ️ 微软服务
+ - DOMAIN-SUFFIX,live.net,Ⓜ️ 微软服务
+ - DOMAIN-SUFFIX,fast.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflix.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflix.net,🎥 Netflix
+ - DOMAIN-SUFFIX,nflxext.com,🎥 Netflix
+ - DOMAIN-SUFFIX,nflximg.com,🎥 Netflix
+ - DOMAIN-SUFFIX,nflximg.net,🎥 Netflix
+ - DOMAIN-SUFFIX,nflxso.net,🎥 Netflix
+ - DOMAIN-SUFFIX,nflxvideo.net,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflixdnstest0.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflixdnstest1.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflixdnstest2.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflixdnstest3.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflixdnstest4.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflixdnstest5.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflixdnstest6.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflixdnstest7.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflixdnstest8.com,🎥 Netflix
+ - DOMAIN-SUFFIX,Netflixdnstest9.com,🎥 Netflix
+ - DOMAIN-KEYWORD,dualstack.apiproxy-,🎥 Netflix
+ - DOMAIN-KEYWORD,dualstack.ichnaea-web-,🎥 Netflix
+ - IP-CIDR,23.246.0.0/18,🎥 Netflix,no-resolve
+ - IP-CIDR,37.77.184.0/21,🎥 Netflix,no-resolve
+ - IP-CIDR,45.57.0.0/17,🎥 Netflix,no-resolve
+ - IP-CIDR,64.120.128.0/17,🎥 Netflix,no-resolve
+ - IP-CIDR,66.197.128.0/17,🎥 Netflix,no-resolve
+ - IP-CIDR,108.175.32.0/20,🎥 Netflix,no-resolve
+ - IP-CIDR,192.173.64.0/18,🎥 Netflix,no-resolve
+ - IP-CIDR,198.38.96.0/19,🎥 Netflix,no-resolve
+ - IP-CIDR,198.45.48.0/20,🎥 Netflix,no-resolve
+ - IP-CIDR,34.210.42.111/32,🎥 Netflix,no-resolve
+ - IP-CIDR,52.89.124.203/32,🎥 Netflix,no-resolve
+ - IP-CIDR,54.148.37.5/32,🎥 Netflix,no-resolve
+ - DOMAIN-SUFFIX,googlevideo.com,🎥 Youtube
+ - DOMAIN-SUFFIX,youtube.com,🎥 Youtube
+ - DOMAIN-SUFFIX,ytimg.com,🎥 Youtube
+ - DOMAIN,youtubei.googleapis.com,🎥 Youtube
+ - DOMAIN,yt3.ggpht.com,🎥 Youtube
+ - DOMAIN-SUFFIX,infiniport.xyz, ✈ 机场
+ - DOMAIN-SUFFIX,xmrth.com, ✈ 机场
+ - RULE-SET,applications,DIRECT
+ - RULE-SET,private,DIRECT
+ - RULE-SET,reject,🛑 拦截
+ - RULE-SET,icloud,DIRECT
+ - RULE-SET,apple,DIRECT
+ - RULE-SET,proxy,🔰 节点代理
+ - RULE-SET,direct,DIRECT
+ - RULE-SET,lancidr,DIRECT
+ - RULE-SET,cncidr,DIRECT
+ - RULE-SET,telegramcidr,📲 电报
+ - GEOIP,LAN,DIRECT
+ - GEOIP,CN,DIRECT
+ - MATCH,🔰 节点代理
