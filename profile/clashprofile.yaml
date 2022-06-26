@@ -16,7 +16,7 @@ dns:
 proxy-providers:
   Airport1:
     type: http
-    url: "xxxx"
+    url: "转换后的proxy-provider连接"
     interval: 8640
     path: ./Airport1.yaml
     health-check:
