@@ -16,7 +16,7 @@ dns:
 proxy-providers:
   Airport1:
     type: http
-    url: "xxxx"
+    url: "http://your-proxy-provider-url"
     interval: 8640
     path: ./Airport1.yaml
     health-check:
@@ -174,21 +174,21 @@ rule-providers:
     path: ./ruleset/microsoft.yaml
     interval: 86400
 
- netflix:
+  netflix:
     type: http
     behavior: classical
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/netflix.txt"
     path: ./ruleset/netflix.yaml
     interval: 86400
 
- proxyaddition:
+  proxyaddition:
     type: http
     behavior: classical
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/proxyaddition.txt"
     path: ./ruleset/proxyaddition.yaml
     interval: 86400
 
- youtube:
+  youtube:
     type: http
     behavior: classical
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/youtube.txt"
