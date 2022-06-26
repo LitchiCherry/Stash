@@ -76,6 +76,11 @@ proxy-groups:
     proxies:
       - REJECT
       - DIRECT
+  - name: 🕸FINAL
+    type: select
+    proxies:
+      - 🔰 节点代理
+      - DIRECT
 rule-providers:
   reject:
     type: http
@@ -208,4 +213,4 @@ rules:
  - RULE-SET,telegramcidr,📲 电报
  - GEOIP,LAN,DIRECT
  - GEOIP,CN,DIRECT
- - MATCH,🔰 节点代理
+ - MATCH,🕸FINAL
