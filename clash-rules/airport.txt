@@ -1,0 +1,4 @@
+payload:
+ - DOMAIN-SUFFIX,infiniport.xyz
+ - DOMAIN-SUFFIX,xmrth.com
+ - DOMAIN-KEYWORD,justmysocks
