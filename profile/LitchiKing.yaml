@@ -27,59 +27,69 @@ proxy-providers:
 proxies:
  
 proxy-groups:
-  - name: 🔰 节点代理
+  - name: 代理
     type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+    icon: 
     use:
       - Airport1
     proxies:
-      - ♻️ 自动节点代理
-  - name: ♻️ 自动节点代理
+      - 自动
+  - name: 自动
     type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
     url: http://www.qualcomm.cn/generate_204
     interval: 120
     use:
       - Airport1
-  - name: 🎥 Netflix
+  - name: Netflix
     type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
     use:
       - Airport1
-  - name: 🎥 Youtube
+  - name: Youtube
     type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
     use:
       - Airport1
     proxies:
-      - 🔰 节点代理
-      - ♻️ 自动节点代理
-  - name: Ⓜ️ 微软服务
+      - 代理
+      - 自动
+  - name: 微软服务
     type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
     use:
       - Airport1
     proxies:
       - DIRECT
-      - 🔰 节点代理
-  - name: 📲 电报
+      - 代理
+  - name: 电报
     type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram_X.png
     use:
       - Airport1
     proxies:
-      - 🔰 节点代理
-      - ♻️ 自动节点代理
-  - name: ✈ 机场
+      - 代理
+      - 自动
+  - name: 机场
     type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Airport.png
     use:
       - Airport1
     proxies:
-      - 🔰 节点代理
-      - ♻️ 自动节点代理
-  - name: 🚫 拦截
+      - 代理
+      - 自动
+  - name: 拦截
     type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AdBlack.png
     proxies:
       - REJECT
       - DIRECT
-  - name: 🕸FINAL
+  - name: FINAL
     type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Blackhole.png
     proxies:
-      - 🔰 节点代理
+      - 代理
       - DIRECT
 
 rule-providers:
@@ -204,22 +214,22 @@ rule-providers:
 
 rules:
  - RULE-SET,directaddtion,DIRECT
- - RULE-SET,iosupgrade,🚫 拦截
- - RULE-SET,proxyaddition,🔰 节点代理
- - RULE-SET,microsoft,Ⓜ️ 微软服务
- - RULE-SET,netflix,🎥 Netflix
- - RULE-SET,youtube,🎥 Youtube
- - RULE-SET,airport,✈ 机场
+ - RULE-SET,iosupgrade,拦截
+ - RULE-SET,proxyaddition,代理
+ - RULE-SET,microsoft,微软服务
+ - RULE-SET,netflix,Netflix
+ - RULE-SET,youtube,Youtube
+ - RULE-SET,airport,机场
  - RULE-SET,applications,DIRECT
  - RULE-SET,private,DIRECT
- - RULE-SET,reject,🚫 拦截
+ - RULE-SET,reject,拦截
  - RULE-SET,icloud,DIRECT
  - RULE-SET,apple,DIRECT
- - RULE-SET,proxy,🔰 节点代理
+ - RULE-SET,proxy,代理
  - RULE-SET,direct,DIRECT
  - RULE-SET,lancidr,DIRECT
  - RULE-SET,cncidr,DIRECT
- - RULE-SET,telegramcidr,📲 电报
+ - RULE-SET,telegramcidr,电报
  - GEOIP,LAN,DIRECT
  - GEOIP,CN,DIRECT
- - MATCH,🕸FINAL
+ - MATCH,FINAL
