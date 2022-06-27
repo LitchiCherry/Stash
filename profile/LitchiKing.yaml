@@ -155,21 +155,21 @@ rule-providers:
 
   airport:
     type: http
-    behavior: classical
+    behavior: domain-text
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/airport.txt"
     path: ./ruleset/airport.yaml
     interval: 86400
 
   directaddtion:
     type: http
-    behavior: classical
+    behavior: domain-text
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/directaddtion.txt"
     path: ./ruleset/directaddtion.yaml
     interval: 86400
 
   microsoft:
     type: http
-    behavior: classical
+    behavior: domain-text
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/microsoft.txt"
     path: ./ruleset/microsoft.yaml
     interval: 86400
@@ -183,21 +183,21 @@ rule-providers:
 
   proxyaddition:
     type: http
-    behavior: classical
+    behavior: domain-text
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/proxyaddition.txt"
     path: ./ruleset/proxyaddition.yaml
     interval: 86400
 
   youtube:
     type: http
-    behavior: classical
+    behavior: domain-text
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/youtube.txt"
     path: ./ruleset/youtube.yaml
     interval: 86400
     
   iosupgrade:
     type: http
-    behavior: classical
+    behavior: domain-text
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/iosupgrade.txt"
     path: ./ruleset/iosupgrade.yaml
     interval: 86400  
