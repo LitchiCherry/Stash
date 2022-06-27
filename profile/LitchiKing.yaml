@@ -30,7 +30,6 @@ proxy-groups:
   - name: 代理
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
-    icon: 
     use:
       - Airport1
     proxies:
