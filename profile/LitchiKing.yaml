@@ -197,7 +197,7 @@ rule-providers:
 
 rules:
  - RULE-SET,directaddtion,DIRECT
- - RULE-SET,proxyaddtion,🔰 节点代理
+ - RULE-SET,proxyaddition,🔰 节点代理
  - RULE-SET,microsoft,Ⓜ️ 微软服务
  - RULE-SET,netflix,🎥 Netflix
  - RULE-SET,youtube,🎥 Youtube
