@@ -194,9 +194,17 @@ rule-providers:
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/youtube.txt"
     path: ./ruleset/youtube.yaml
     interval: 86400
+    
+  iosupgrade:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/iosupgrade.txt"
+    path: ./ruleset/iosupgrade.yaml
+    interval: 86400  
 
 rules:
  - RULE-SET,directaddtion,DIRECT
+ - RULE-SET,iosupgrade,🚫 拦截
  - RULE-SET,proxyaddition,🔰 节点代理
  - RULE-SET,microsoft,Ⓜ️ 微软服务
  - RULE-SET,netflix,🎥 Netflix
