@@ -71,7 +71,7 @@ proxy-groups:
     proxies:
       - 🔰 节点代理
       - ♻️ 自动节点代理
-  - name: 🛑 拦截
+  - name: 🚫 拦截
     type: select
     proxies:
       - REJECT
@@ -204,7 +204,7 @@ rules:
  - RULE-SET,airport,✈ 机场
  - RULE-SET,applications,DIRECT
  - RULE-SET,private,DIRECT
- - RULE-SET,reject,🛑 拦截
+ - RULE-SET,reject,🚫 拦截
  - RULE-SET,icloud,DIRECT
  - RULE-SET,apple,DIRECT
  - RULE-SET,proxy,🔰 节点代理
