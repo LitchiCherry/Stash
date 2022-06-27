@@ -1,2 +1,1 @@
-payload:
- - DOMAIN-SUFFIX,javmost.com
+.javmost.com
