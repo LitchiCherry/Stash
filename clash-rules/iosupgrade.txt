@@ -1,6 +1,5 @@
-payload:
- - DOMAIN-SUFFIX,mesu.apple.com
- - DOMAIN-SUFFIX,appldnld.apple.com
- - DOMAIN-SUFFIX,swscan.apple.com
- - DOMAIN-SUFFIX,xp.apple.com
- - DOMAIN-SUFFIX,gdmf.apple.com
+mesu.apple.com
+appldnld.apple.com
+swscan.apple.com
+xp.apple.com
+gdmf.apple.com
