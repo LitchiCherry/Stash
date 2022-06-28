@@ -1,1 +1,1 @@
-# Only for stash.
+# Now only for stash.
