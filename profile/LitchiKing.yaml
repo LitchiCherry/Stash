@@ -155,13 +155,6 @@ rule-providers:
     path: ./ruleset/lancidr.yaml
     interval: 86400
 
-  applications:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
-    path: ./ruleset/applications.yaml
-    interval: 86400
-
   airport:
     type: http
     behavior: domain-text
@@ -219,7 +212,6 @@ rules:
  - RULE-SET,netflix,Netflix
  - RULE-SET,youtube,Youtube
  - RULE-SET,airport,机场
- - RULE-SET,applications,DIRECT
  - RULE-SET,private,DIRECT
  - RULE-SET,reject,拦截
  - RULE-SET,icloud,DIRECT
