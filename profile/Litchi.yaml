@@ -157,13 +157,13 @@ rule-providers:
     
   proxy:
     type: http
-    behavior: classical
+    behavior: domain-text
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/proxy.txt"
     path: ./ruleset/proxy.yaml
     interval: 86400
 
   proxyaddition:
-    type: http
+    type: classical
     behavior: domain-text
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/proxyaddition.txt"
     path: ./ruleset/proxyaddition.yaml
