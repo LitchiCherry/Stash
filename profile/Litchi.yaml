@@ -95,7 +95,7 @@ rule-providers:
   reject:
     type: http
     behavior: domain-text
-    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.txt"
+    url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/reject.txt"
     path: ./ruleset/reject.yaml
     interval: 86400
 
@@ -111,13 +111,6 @@ rule-providers:
     behavior: domain
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
     path: ./ruleset/apple.yaml
-    interval: 86400
-
-  proxy:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
-    path: ./ruleset/proxy.yaml
     interval: 86400
 
   private:
@@ -195,7 +188,6 @@ rules:
  - RULE-SET,netflix,Netflix
  - RULE-SET,youtube,Youtube
  - RULE-SET,airport,机场
- - RULE-SET,proxy,代理
  - RULE-SET,telegramcidr,电报
  - GEOIP,LAN,DIRECT
  - GEOIP,CN,DIRECT
