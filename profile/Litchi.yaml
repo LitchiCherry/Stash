@@ -134,11 +134,11 @@ rule-providers:
     path: ./ruleset/airport.yaml
     interval: 86400
 
-  directaddtion:
+  direct:
     type: http
     behavior: domain-text
-    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/directaddtion.txt"
-    path: ./ruleset/directaddtion.yaml
+    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/direct.txt"
+    path: ./ruleset/direct.yaml
     interval: 86400
 
   microsoft:
@@ -153,6 +153,13 @@ rule-providers:
     behavior: classical
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/netflix.txt"
     path: ./ruleset/netflix.yaml
+    interval: 86400
+    
+  proxy:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/proxy.txt"
+    path: ./ruleset/proxy.yaml
     interval: 86400
 
   proxyaddition:
@@ -180,9 +187,10 @@ rules:
  - RULE-SET,iosupgrade,拦截
  - RULE-SET,reject,拦截
  - RULE-SET,private,DIRECT 
- - RULE-SET,directaddtion,DIRECT
+ - RULE-SET,direct,DIRECT
  - RULE-SET,icloud,DIRECT
  - RULE-SET,apple,DIRECT
+  - RULE-SET,proxy,代理
  - RULE-SET,proxyaddition,代理
  - RULE-SET,microsoft,微软服务
  - RULE-SET,netflix,Netflix
