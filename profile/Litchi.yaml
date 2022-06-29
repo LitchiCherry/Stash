@@ -190,7 +190,7 @@ rules:
  - RULE-SET,direct,DIRECT
  - RULE-SET,icloud,DIRECT
  - RULE-SET,apple,DIRECT
-  - RULE-SET,proxy,代理
+ - RULE-SET,proxy,代理
  - RULE-SET,proxyaddition,代理
  - RULE-SET,microsoft,微软服务
  - RULE-SET,netflix,Netflix
