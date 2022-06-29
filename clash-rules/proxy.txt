@@ -317,7 +317,6 @@
 .github.io
 .githubassets.com
 .githubusercontent.com
-.onedrive.live.com
 .windows.net
 .xboxlive.com
 .msecnd.net
