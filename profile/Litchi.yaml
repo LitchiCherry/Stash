@@ -120,7 +120,6 @@ rule-providers:
     path: ./ruleset/proxy.yaml
     interval: 86400
 
-
   private:
     type: http
     behavior: domain
@@ -134,14 +133,7 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
     path: ./ruleset/telegramcidr.yaml
     interval: 86400
-
-  lancidr:
-    type: http
-    behavior: ipcidr
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
-    path: ./ruleset/lancidr.yaml
-    interval: 86400
-
+    
   airport:
     type: http
     behavior: domain-text
@@ -192,19 +184,18 @@ rule-providers:
     interval: 86400  
 
 rules:
- - RULE-SET,directaddtion,DIRECT
  - RULE-SET,iosupgrade,拦截
+ - RULE-SET,reject,拦截
+ - RULE-SET,private,DIRECT 
+ - RULE-SET,directaddtion,DIRECT
+ - RULE-SET,icloud,DIRECT
+ - RULE-SET,apple,DIRECT
  - RULE-SET,proxyaddition,代理
  - RULE-SET,microsoft,微软服务
  - RULE-SET,netflix,Netflix
  - RULE-SET,youtube,Youtube
  - RULE-SET,airport,机场
- - RULE-SET,private,DIRECT
- - RULE-SET,reject,拦截
- - RULE-SET,icloud,DIRECT
- - RULE-SET,apple,DIRECT
  - RULE-SET,proxy,代理
- - RULE-SET,cncidr,DIRECT
  - RULE-SET,telegramcidr,电报
  - GEOIP,LAN,DIRECT
  - GEOIP,CN,DIRECT
