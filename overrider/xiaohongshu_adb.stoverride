@@ -1,5 +1,5 @@
 name: 小红书去广告
-desc: 小红书广告去除
+desc: 开屏等
 http:
   mitm:
     - "*.xiaohongshu.com"
