@@ -163,8 +163,8 @@ rule-providers:
     interval: 86400
 
   proxyaddition:
-    type: classical
-    behavior: domain-text
+    type: http
+    behavior: classical
     url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/proxyaddition.txt"
     path: ./ruleset/proxyaddition.yaml
     interval: 86400
