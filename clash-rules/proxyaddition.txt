@@ -1,2 +1,2 @@
 # classical类型
-IP-CIDR,1.1.1.1/24
+IP-CIDR,1.1.1.1/24,no-resolve
