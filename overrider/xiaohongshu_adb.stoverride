@@ -1,0 +1,10 @@
+name: 小红书去广告
+desc: 小红书广告去除
+http:
+  mitm:
+    - "*.xiaohongshu.com"
+  url-rewrite:
+    - ^https:\//www.xiaohongshu.com\/api\/sns\/v1\/ads\/apple\/record* url reject
+    - ^https:\//www.xiaohongshu.com\/api\/sns\/v1\/tag\/ads_engage* url reject
+    - ^https:\//pages.xiaohongshu.com\/data\/native\/matrix_switches* url reject
+    - ^https:\//www\.xiaohongshu\.com\/api\/sns\/v1\/ads\/resource* url reject
