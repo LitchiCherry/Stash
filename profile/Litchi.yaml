@@ -130,56 +130,56 @@ rule-providers:
   airport:
     type: http
     behavior: domain-text
-    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/airport.txt"
+    url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/airport.txt"
     path: ./ruleset/airport.yaml
     interval: 86400
 
   direct:
     type: http
     behavior: domain-text
-    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/direct.txt"
+    url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/direct.txt"
     path: ./ruleset/direct.yaml
     interval: 86400
 
   microsoft:
     type: http
     behavior: domain-text
-    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/microsoft.txt"
+    url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/microsoft.txt"
     path: ./ruleset/microsoft.yaml
     interval: 86400
 
   netflix:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/netflix.txt"
+    url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/netflix.txt"
     path: ./ruleset/netflix.yaml
     interval: 86400
     
   proxy:
     type: http
     behavior: domain-text
-    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/proxy.txt"
+    url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/proxy.txt"
     path: ./ruleset/proxy.yaml
     interval: 86400
 
   proxyaddition:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/proxyaddition.txt"
+    url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/proxyaddition.txt"
     path: ./ruleset/proxyaddition.yaml
     interval: 86400
 
   youtube:
     type: http
     behavior: domain-text
-    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/youtube.txt"
+    url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/youtube.txt"
     path: ./ruleset/youtube.yaml
     interval: 86400
     
   iosupgrade:
     type: http
     behavior: domain-text
-    url: "https://raw.githubusercontent.com/LitchiCherry/clash/main/clash-rules/iosupgrade.txt"
+    url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/iosupgrade.txt"
     path: ./ruleset/iosupgrade.yaml
     interval: 86400  
 
