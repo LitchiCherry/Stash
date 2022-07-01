@@ -8,7 +8,7 @@ http:
     - "s.youtube.com"
     - "youtubei.googleapis.com"   
   url-rewrite:
-    - ctier=[A-Z] url 302 ctier=A
+    - (ctier=[A-Z]) (ctier=A) 302
     - (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
     - ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad - reject
     - ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v\d\/player\/ad_break - reject
