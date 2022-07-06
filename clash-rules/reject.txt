@@ -354,6 +354,11 @@ IP-CIDR,124.192.153.42/32
 .aso1.net
 .blockadsnot.com
 .adsco.re
+.trafconverter.com
+.histats.com
+.amung.us
+.33across.com
+.simpli.fi
 .exosrv.com
 .eyebrowscrambledlater.com
 .realsrv.com
