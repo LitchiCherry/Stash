@@ -392,3 +392,15 @@
 .licdn.com
 .msn.com
 .skype.com
+.yandex.com
+.dood.la
+.doodcdn.com
+.dood.video
+.akamai-cdn-content.com
+h.javmost.com
+.voe-network.net
+.fembed.com
+.comicun.com
+.mangareader.net
+.qy0.ru
+.wnacg.com
