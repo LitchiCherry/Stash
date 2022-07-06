@@ -397,7 +397,7 @@
 .doodcdn.com
 .dood.video
 .akamai-cdn-content.com
-h.javmost.com
+.javmost.com
 .voe-network.net
 .fembed.com
 .comicun.com
