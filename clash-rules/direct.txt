@@ -6,3 +6,4 @@
 .sinaimg.cn
 .weibo.cn
 .weibo.com
+.weibocdn.com
