@@ -1,2 +1,4 @@
 .razord.top
 .haishan.me
+.wechat.com
+.qq.com
