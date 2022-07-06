@@ -2,3 +2,5 @@
 .haishan.me
 .wechat.com
 .qq.com
+.sinaimg.com
+.sinaimg.cn
