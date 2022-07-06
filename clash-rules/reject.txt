@@ -381,3 +381,4 @@ IP-CIDR,124.192.153.42/32
 .applvn.com
 .applovin.com
 .un-block-voe.net
+.tqt.weibo.cn
