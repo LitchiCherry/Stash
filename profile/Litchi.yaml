@@ -142,6 +142,13 @@ rule-providers:
     url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/direct.txt"
     path: ./ruleset/direct.yaml
     interval: 86400
+    
+  directaddition:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/directaddition.txt"
+    path: ./ruleset/directaddition.yaml
+    interval: 86400
 
   microsoft:
     type: http
@@ -190,6 +197,7 @@ rules:
  - RULE-SET,reject,拦截
  - RULE-SET,private,DIRECT 
  - RULE-SET,direct,DIRECT
+ - RULE-SET,directaddition,DIRECT
  - RULE-SET,icloud,DIRECT
  - RULE-SET,apple,DIRECT
  - RULE-SET,proxy,代理
