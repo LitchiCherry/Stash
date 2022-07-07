@@ -7,3 +7,4 @@
 .weibo.cn
 .weibo.com
 .weibocdn.com
+.xueqiu.com
