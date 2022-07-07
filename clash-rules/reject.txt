@@ -382,3 +382,5 @@ IP-CIDR,124.192.153.42/32
 .applovin.com
 .un-block-voe.net
 .tqt.weibo.cn
+.uve.weibo.com
+adstrategy.biz.weibo.com
