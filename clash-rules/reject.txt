@@ -383,4 +383,5 @@ IP-CIDR,124.192.153.42/32
 .un-block-voe.net
 .tqt.weibo.cn
 .uve.weibo.com
-adstrategy.biz.weibo.com
+.adstrategy.biz.weibo.com
+.dove.xueqiu.com
