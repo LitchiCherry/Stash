@@ -1,4 +1,5 @@
 .javmost.com
+.gstatic.com
 .9cache.com
 .9gag.com
 .abc.com
