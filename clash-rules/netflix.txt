@@ -1,5 +1,4 @@
 payload:
- - HOST-SUFFIX,fast.com
  - HOST-SUFFIX,edgesuite.net
  - HOST-SUFFIX,fast.com
  - HOST-SUFFIX,netflix.ca
