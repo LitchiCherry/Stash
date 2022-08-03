@@ -48,6 +48,11 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
     use:
       - Airport1
+  - name: Disney
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Disney.png
+    use:
+      - Airport1
   - name: Youtube
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
@@ -191,13 +196,28 @@ rule-providers:
     url: "https://raw.githubusercontent.com/LitchiCherry/Stash/main/clash-rules/iosupgrade.txt"
     path: ./ruleset/iosupgrade.yaml
     interval: 86400  
+    
+  paypal:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml"
+    path: ./ruleset/paypal.yaml
+    interval: 86400  
 
+  disney:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml"
+    path: ./ruleset/disney.yaml
+    interval: 86400  
+    
 rules:
  - RULE-SET,iosupgrade,拦截
  - RULE-SET,reject,拦截
  - RULE-SET,private,DIRECT 
  - RULE-SET,direct,DIRECT
  - RULE-SET,directaddition,DIRECT
+ - RULE-SET,paypal,DIRECT
  - RULE-SET,icloud,DIRECT
  - RULE-SET,apple,DIRECT
  - RULE-SET,proxy,代理
@@ -205,6 +225,7 @@ rules:
  - RULE-SET,microsoft,微软服务
  - RULE-SET,netflix,Netflix
  - RULE-SET,youtube,Youtube
+ - RULE-SET,disney,Disney
  - RULE-SET,airport,机场
  - RULE-SET,telegramcidr,电报
  - GEOIP,LAN,DIRECT
